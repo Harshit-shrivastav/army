@@ -153,13 +153,13 @@ async def playlist(client, message):
 def updated_stats(chat, queue, vol=100):
     if chat.id in callsmusic.pytgcalls.active_calls:
         # if chat.id in active_chats:
-        stats = "Settings of **{}**".format(chat.title)
+        stats = "𝕊𝕖𝕥𝕥𝕚𝕟𝕘𝕤 𝕠𝕗 **{}**".format(chat.title)
         if len(que) > 0:
             stats += "\n\n"
-            stats += "Volume : {}%\n".format(vol)
-            stats += "Songs in queue : `{}`\n".format(len(que))
-            stats += "Now Playing : **{}**\n".format(queue[0][0])
-            stats += "Requested by : {}".format(queue[0][1].mention)
+            stats += "𝕍𝕠𝕝𝕦𝕞𝕖 : {}%\n".format(vol)
+            stats += "𝕊𝕠𝕟𝕘𝕤 𝕚𝕟 𝕢𝕦𝕖𝕦𝕖 : `{}`\n".format(len(que))
+            stats += "ℕ𝕠𝕨 ℙ𝕝𝕒𝕪𝕚𝕟𝕘 : **{}**\n".format(queue[0][0])
+            stats += "ℝ𝕖𝕢𝕦𝕖𝕤𝕥𝕖𝕕 𝕓𝕪 : {}".format(queue[0][1].mention)
     else:
         stats = None
     return stats
@@ -179,9 +179,9 @@ def r_ply(type_):
                 InlineKeyboardButton("⏭", "skip"),
             ],
             [
-                InlineKeyboardButton("🎚 Playlist ", "playlist"),
+                InlineKeyboardButton("🎚 𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 ", "playlist"),
             ],
-            [InlineKeyboardButton(" Close Menu 🎛", "cls")],
+            [InlineKeyboardButton(" 𝐂𝐥𝐨𝐬𝐞 𝐌𝐞𝐧𝐮 🎛", "cls")],
         ]
     )
     return mar
@@ -196,14 +196,14 @@ async def ee(client, message):
     if stats:
         await message.reply(stats)
     else:
-        await message.reply("No VC instances running in this chat")
+        await message.reply("🍦  🎀  𝒩o 𝒱𝒞 𝒾𝓃𝓈𝓉𝒶𝓃𝒸𝑒𝓈 𝓇𝓊𝓃𝓃𝒾𝓃𝑔 𝒾𝓃 𝓉𝒽𝒾𝓈 𝒸𝒽𝒶𝓉  🎀  🍦")
 
 
 @Client.on_message(filters.command("player") & filters.group & ~filters.edited)
 @authorized_users_only
 async def settings(client, message):
     if message.chat.id in DISABLED_GROUPS:
-        await message.reply("Music Player is Disabled")
+        await message.reply("🍧  🎀  𝑀𝓊𝓈𝒾𝒸 𝒫𝓁𝒶𝓎𝑒𝓇 𝒾𝓈 𝒟𝒾𝓈𝒶𝒷𝓁𝑒𝒹  🎀  🍧")
         return    
     playing = None
     chat_id = get_chat_id(message.chat)
@@ -218,7 +218,7 @@ async def settings(client, message):
         else:
             await message.reply(stats, reply_markup=r_ply("play"))
     else:
-        await message.reply("No VC instances running in this chat")
+        await message.reply("🍦  🎀  𝒩o 𝒱𝒞 𝒾𝓃𝓈𝓉𝒶𝓃𝒸𝑒𝓈 𝓇𝓊𝓃𝓃𝒾𝓃𝑔 𝒾𝓃 𝓉𝒽𝒾𝓈 𝒸𝒽𝒶𝓉  🎀  🍦")
 
 
 @Client.on_message(
@@ -818,10 +818,10 @@ async def ytplay(_, message: Message):
                 InlineKeyboardButton("⏭", "skip"),
             ],
             [
-                InlineKeyboardButton("🎚 Playlist ", "playlist"),
-                InlineKeyboardButton("Settings ⚙", "menu"),
+                InlineKeyboardButton("🎚 𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 ", "playlist"),
+                InlineKeyboardButton("𝐒𝐞𝐭𝐭𝐢𝐧𝐠𝐬 ⚙", "menu"),
             ],
-            [InlineKeyboardButton(" Close Menu 🎛", "cls")],
+            [InlineKeyboardButton(" 𝐂𝐥𝐨𝐬𝐞 𝐌𝐞𝐧𝐮 🎛", "cls")],
         ]
     )
     requested_by = message.from_user.first_name
