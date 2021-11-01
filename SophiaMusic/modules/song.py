@@ -33,7 +33,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += " " + str(i)
     print(query)
-    m = message.reply("🔎 searching the song...")
+    m = message.reply("🔎 𝕊𝕖𝕒𝕣𝕔𝕙𝕚𝕟𝕘 𝕥𝕙𝕖 𝕤𝕠𝕟𝕘...")
     ydl_opts = {"format": "bestaudio/best[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -50,16 +50,16 @@ def song(client, message):
         results[0]["views"]
 
     except Exception as e:
-        m.edit("❌ Found Nothing.\n\nTry another keywork or maybe spell it properly.")
+        m.edit("❌ ꜰᴏᴜɴᴅ ɴᴏᴛʜɪɴɢ.\n\nᴛʀʏ ᴀɴᴏᴛʜᴇʀ ᴋᴇʏᴡᴏʀᴋ ᴏʀ ᴍᴀʏʙᴇ ꜱᴘᴇʟʟ ɪᴛ ᴘʀᴏᴘᴇʀʟʏ.")
         print(str(e))
         return
-    m.edit("Downloading the song ")
+    m.edit("𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙩𝙝𝙚 𝙨𝙤𝙣𝙜...")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = "**Uploaded by army **"
+        rep = "🆄🅿🅻🅾🅰🅳🅴🅳 🅱🆈 🅰🆁🅼🆈 🅼🆄🆂🅸🅲."
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(dur_arr[i]) * secmul
@@ -399,7 +399,7 @@ async def ytmusic(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"`Uploading {urlissed} Song From YouTube Music!`",
+            f"`ᴜᴘʟᴏᴀᴅɪɴɢ {urlissed} ꜱᴏɴɢ ꜰʀᴏᴍ ʏᴏᴜᴛᴜʙᴇ ᴍᴜꜱɪᴄ!`",
             file_stark,
         ),
     )
