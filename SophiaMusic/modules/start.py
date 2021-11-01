@@ -21,7 +21,7 @@ async def start_(client: Client, message: Message):
             [
                  [
                     InlineKeyboardButton(
-                        "𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐥𝐢𝐬𝐭📒", url="https://t.me/projectking")
+                        "𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐥𝐢𝐬𝐭📒", url="https://telegra.ph/Commands-for-army-music-11-01")
                   ],[
                     InlineKeyboardButton(
                         "𝐎𝐰𝐧𝐞𝐫🧑🏻‍💻", url="https://t.me/projectking")
